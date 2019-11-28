@@ -1,0 +1,12 @@
+.btn {
+  letter-spacing: $font-tracking;
+  text-transform: uppercase;
+}
+
+.btn.btn-sm {
+  min-width: 180px;
+}
+
+.btn.btn-light {
+  color: theme-color('secondary');
+}

@@ -1,0 +1,49 @@
+.linked-block {
+  color: $gray-800;
+  font-weight: bold;
+  min-height: 140px;
+  padding: $spacer * 0.5;
+  text-align: center;
+  transition: background 350ms $transition-cubic;
+
+  small {
+    display: block;
+    font-weight: 700;
+  }
+
+  &:hover {
+    background: $gradient;
+    color: #fff;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacer $spacer * 0.5;
+  }
+
+  @include make-col-ready();
+  @include make-col(6, 12);
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(1, 5);
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .linked-block:nth-child(1n+3) {
+    border-top: 1px solid theme-color(secondary);
+  }
+
+  .linked-block:nth-child(2n+1) {
+    border-right: 1px solid theme-color(secondary);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .linked-block:nth-child(n+6) {
+    border-top: 1px solid theme-color(secondary);
+  }
+
+  .linked-block:not(:nth-child(5n)) {
+    border-right: 1px solid theme-color(secondary);
+  }
+}

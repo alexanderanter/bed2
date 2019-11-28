@@ -1,0 +1,45 @@
+.client-logos {
+  background: url("../images/pattern-right.png") no-repeat right top, gray(800);
+  padding-bottom: $spacer * 3;
+  padding-top: $spacer * 3;
+
+  .block-header {
+    color: #fff;
+  }
+
+  @include media-breakpoint-up(md) {
+    background: url("../images/pattern-left.png") no-repeat left top, url("../images/pattern-right.png") no-repeat right top, gray(800);
+  }
+}
+
+.logo-block:hover {
+  background-image: $gradient;
+}
+
+.logo-block img {
+  padding: $spacer * 0.75 $spacer * 0.75;
+
+  @include media-breakpoint-up(md) {
+    padding: $spacer $spacer * 2;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .logo-block:nth-child(1n+3) {
+    border-top: 1px solid rgba(gray(200), 0.1);
+  }
+
+  .logo-block:nth-child(2n+1) {
+    border-right: 1px solid rgba(gray(200), 0.1);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .logo-block:nth-child(n+5) {
+    border-top: 1px solid rgba(gray(200), 0.1);
+  }
+
+  .logo-block:not(:nth-child(4n)) {
+    border-right: 1px solid rgba(gray(200), 0.1);
+  }
+}

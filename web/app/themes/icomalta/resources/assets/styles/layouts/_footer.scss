@@ -1,0 +1,65 @@
+.footer {
+  background: url('../images/footer-pattern.png') no-repeat right center, gray(900);
+  color: #fff;
+  padding-bottom: $spacer * 3;
+  padding-top: $spacer * 3;
+  margin-top: -($spacer * 3) * 2;
+  clip-path: polygon(0 (#{$spacer * 3}), 100% 0, 100% 100%, 0 100%);
+
+  @include media-breakpoint-up(lg) {
+    padding-top: $spacer * 5;
+    margin-top: -($spacer * 5) * 2;
+    clip-path: polygon(0 (#{$spacer * 5}), 100% 0, 100% 100%, 0 100%);
+  }
+
+  .widget {
+    @include media-breakpoint-up(lg) {
+      padding-bottom: $spacer * 0.5;
+      padding-left: $spacer;
+      padding-top: $spacer * 0.5;
+
+      &::after {
+        background: linear-gradient(180deg, theme-color(secondary), theme-color(primary));
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 2px;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: $spacer;
+      margin-top: $spacer;
+      width: 100%;
+    }
+  }
+
+  .widget .textwidget p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .widget .menu li {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+footer section:nth-child(n+3) {
+  flex: 0 0 20%;
+}

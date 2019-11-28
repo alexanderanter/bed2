@@ -1,0 +1,79 @@
+ul {
+  padding-left: 20px;
+}
+
+.section {
+  margin-top: $spacer * 4;
+  margin-bottom: $spacer * 4;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include make-container();
+  @include make-container-max-widths();
+}
+
+// Adjust for padding top in footer
+.flexible-content > div:last-child,
+main {
+  padding-bottom: $spacer * 3;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: $spacer * 5;
+  }
+}
+
+.dark-section {
+  color: #fff;
+}
+
+// Offset anchor scrolls
+//:target {
+//  display: block;
+//  position: relative;
+//  top: -120px;
+//  visibility: hidden;
+//}
+
+.offset::before {
+  display: block;
+  content: " ";
+  height: 150px;      /* Give height of your fixed element */
+  margin-top: -150px; /* Give negative margin of your fixed element */
+  visibility: hidden;
+}
+
+.ico-pagination {
+  text-align: center;
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  li {
+    color: gray(600);
+    display: inline-block;
+
+    a {
+      border-bottom: 2px solid transparent;
+      color: gray(600);
+      letter-spacing: $font-tracking;
+      padding-bottom: $spacer * 0.25;
+      padding-left: $spacer * 0.25;
+      padding-right: $spacer * 0.25;
+      text-transform: uppercase;
+      transition: border 250ms ease-in;
+    }
+
+    &.active a,
+    a:hover {
+      color: theme-color(secondary);
+    }
+
+    &.active a {
+      border-color: theme-color(secondary);
+    }
+  }
+}

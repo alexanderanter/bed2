@@ -1,0 +1,49 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/mu-plugins/wp-migrate-db-pro-compatibility.php
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+vendor/*
+!vendor/.gitkeep
+
+# Misc
+.DS_Store
+
+# Allow premium plugins
+!web/app/plugins/classic-editor
+!web/app/plugins/akismet
+!web/app/plugins/advances-custom-fields
+!web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/wp-migrate-db-pro
+!web/app/plugins/wp-migrate-db-pro-cli
+!web/app/plugins/wp-migrate-db-pro-media-files
+!web/app/plugins/autodescription
+!web/app/plugins/disable-xml-rpc-littlebizzy
+!web/app/plugins/duplicate-page
+!web/app/plugins/flamingo
+!web/app/plugins/limit-login-attempts-reloaded
+!web/app/plugins/sendgrid-email-delivery-simplified
+!web/app/plugins/the-events-calendar
+!web/app/plugins/the-seo-framework-extension-manager
+!web/app/plugins/wp-rocket
+!web/app/plugins/swift-mailer
+!web/app/plugins/google-analytics-dashboard-for-wp
+!web/app/plugins/leadin
+!web/app/plugins/contextual-related-posts
+!web/app/plugins/ninja-tables
+!web/app/plugins/goodbye-captcha
+!web/app/plugins/wp-bruiser-contactform7

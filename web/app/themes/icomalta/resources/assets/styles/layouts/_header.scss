@@ -1,0 +1,228 @@
+#header {
+  background: $gradient;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  .admin-bar & {
+    top: 32px;
+  }
+
+  .js-menu-toggle {
+    margin-left: auto;
+    padding: 6px 20px;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    ul li {
+      display: inline-block;
+
+      a {
+        color: #fff;
+        font-size: $font-size-sm;
+        padding: $spacer * 0.5 $spacer * 0.5;
+        text-transform: none;
+      }
+
+      &:hover a,
+      &.active a {
+        background-color: #fff;
+        color: theme-color(secondary-darker);
+      }
+    }
+  }
+
+  .site-logo {
+    padding: $spacer / 3 $spacer / 2;
+
+    img {
+      width: 45px;
+    }
+  }
+}
+
+.main-menu {
+  position: fixed;
+  right: $grid-gutter-width * 0.5;
+  top: $spacer;
+  z-index: 100;
+
+  .toggle-menu-item + ul {
+    display: none;
+  }
+
+  .menu {
+    padding-left: 0;
+  }
+
+  nav ul li {
+    display: block;
+
+    &.active a {
+      font-weight: 700;
+    }
+
+    a {
+      color: #fff;
+      display: block;
+      font-size: $font-size-lg;
+      font-weight: 500;
+      padding: $spacer / 3 $spacer / 2;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      transition: color 340ms $transition-cubic, background-color 340ms $transition-cubic;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: 0;
+    top: $spacer * 0.75;
+
+    nav ul li {
+      a {
+        padding: $spacer / 3 $spacer * 0.75;
+        font-size: $font-size-base;
+      }
+
+      &.active a,
+      &:hover a {
+        background-color: #fff;
+        color: theme-color(secondary-darker);
+      }
+    }
+
+    .js-menu-toggle {
+      display: none;
+    }
+  }
+}
+
+.main-menu {
+  /** Mobile menu */
+  @include media-breakpoint-down(md) {
+    nav {
+      background: $pattern, $gradient;
+      bottom: 0;
+      left: 0;
+      padding: 15% 5% 10%;
+      position: fixed;
+      right: 0;
+      top: 0;
+      overflow-y: scroll;
+      transform: translate(-100%, 0);
+      transition: all 0.32s $transition-cubic;
+      z-index: 99;
+    }
+  }
+
+  .menu-toggle {
+    display: block;
+    height: 2rem;
+    position: relative;
+    //right: 7.5%;
+    //top: 1.5rem;
+    width: 2rem;
+    z-index: 99;
+  }
+
+  .menu-toggle::after,
+  .menu-toggle::before {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 0.25rem;
+    position: absolute;
+    right: 0;
+    top: 0.75rem;
+    width: 100%;
+  }
+
+  .menu-toggle::before {
+    transition: top 0.18s $transition-cubic, transform 0.15s $transition-cubic;
+  }
+
+  .menu-toggle::after {
+    top: 1.5rem;
+    transition: top 180ms 180ms ease-out, width 180ms 360ms ease-out, background 0.35s 0.35s $transition-cubic;
+    width: 80%;
+  }
+
+  .main-menu-open & .menu-toggle::after {
+    top: 0.75rem;
+    transition: width 180ms ease-out, top 180ms 180ms ease-out;
+    width: 100%;
+  }
+
+  .main-menu-open & nav {
+    transform: translate(0, 0);
+  }
+
+  /** Level 2 menu items */
+  @include media-breakpoint-up(lg) {
+    .toggle-menu-item {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .dropdown ul {
+      width: 100%;
+    }
+
+    .toggle-menu-item {
+      cursor: pointer;
+      height: 16px;
+      padding: 0 !important;
+      position: relative;
+      top: 19px;
+      width: 16px;
+    }
+
+    .toggle-menu-item::before,
+    .toggle-menu-item::after {
+      background: #fff;
+      content: "";
+      display: block;
+      height: 3px;
+      position: relative;
+      width: 100%;
+    }
+
+    .toggle-menu-item::before {
+      top: 6px;
+    }
+
+    .toggle-menu-item::after {
+      top: 3px;
+      transform: rotate(90deg);
+      transition: all 0.25s $transition-cubic;
+    }
+
+    .active.toggle-menu-item::after {
+      transform: rotate(0);
+      opacity: 0;
+    }
+  }
+}
+
+.page-header + .main-menu {
+  .main-menu-open & {
+    .menu-toggle::after,
+    .menu-toggle::before {
+      background: #fff;
+    }
+  }
+
+  .menu-toggle::after,
+  .menu-toggle::before {
+    background: theme-color(secondary-darker);
+  }
+}

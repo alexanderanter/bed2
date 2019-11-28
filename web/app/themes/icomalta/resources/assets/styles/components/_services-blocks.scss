@@ -1,0 +1,26 @@
+.service-block {
+  color: gray(600);
+  margin-bottom: $spacer;
+  margin-top: $spacer;
+
+  @include media-breakpoint-up(md) {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.service-block--title {
+  color: gray(700);
+  margin-bottom: 5px;
+}
+
+.service-block--icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: theme-color(primary);
+  flex: 0 0 10px;
+  border: 10px solid #e4d9e0;
+  box-sizing: content-box;
+}

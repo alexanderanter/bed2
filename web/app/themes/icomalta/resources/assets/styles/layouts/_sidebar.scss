@@ -1,0 +1,52 @@
+aside.sidebar > *:not(:first-child) {
+  margin-top: $spacer * 2;
+  margin-bottom: $spacer * 2;
+}
+
+.widget h3 {
+  font-size: $font-size-sm;
+  font-weight: 700;
+  letter-spacing: $font-tracking;
+  text-transform: uppercase;
+}
+
+.widget.widget_categories {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: -5px; // Adjust for the link padding
+
+    a {
+      color: gray(500);
+      display: block;
+      font-size: $font-size-sm;
+      letter-spacing: $font-tracking;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      text-transform: uppercase;
+      transition: color 125ms $transition-cubic;
+
+      &:hover {
+        color: theme-color(secondary);
+      }
+
+      &::before {
+        content: ">";
+        display: inline;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  aside.sidebar {
+    padding-left: $spacer * 0.5;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  aside.sidebar {
+    margin-top: $spacer * 2;
+  }
+}

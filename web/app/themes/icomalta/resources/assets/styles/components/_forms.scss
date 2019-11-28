@@ -1,0 +1,162 @@
+/** Search form */
+.search-form {
+  position: relative;
+}
+
+.search-submit {
+  background-color: transparent;
+  border: 0;
+  bottom: 0;
+  cursor: pointer;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+}
+
+/** General inputs */
+.form-control {
+  font-size: $font-size-sm;
+  padding: 0.65rem 1.15rem;
+}
+
+/** Contact form 7 */
+// This form is for dark backgrounds only
+.contact-form--form form.wpcf7-form {
+  background-color: rgba(#000, 0.15);
+  color: #fff;
+  padding: $spacer $spacer * 1.25;
+
+  @include media-breakpoint-up(md) {
+    padding: $spacer * 2.5 $spacer * 2.75;
+  }
+
+  input,
+  textarea {
+    color: rgba(#fff, 0.8);
+    margin-bottom: 18px;
+    margin-top: 7px;
+
+    &:focus,
+    &:active {
+      color: #fff;
+    }
+
+    &::placeholder {
+      color: rgba(#fff, 0.65);
+    }
+  }
+
+  input.form-control {
+    border-color: rgba(#fff, 0.35);
+  }
+
+  @include media-breakpoint-down(sm) {
+    .wpcf7-not-valid-tip {
+      color: #fff;
+    }
+  }
+
+  .wpcf7-textarea::placeholder {
+    color: #000;
+  }
+}
+
+form.wpcf7-form {
+  input,
+  textarea {
+    color: rgba(#fff, 0.8);
+    margin-bottom: 18px;
+    margin-top: 7px;
+
+    &:focus,
+    &:active {
+      color: #fff;
+    }
+
+    &::placeholder {
+      color: rgba(#fff, 0.65);
+    }
+  }
+
+  textarea::-webkit-input-placeholder {
+    color: rgba(#fff, 0.65) !important;
+  }
+
+  textarea:-moz-placeholder { /* Firefox 18- */
+    color: rgba(#fff, 0.65) !important;
+  }
+
+  textarea::-moz-placeholder {  /* Firefox 19+ */
+    color: rgba(#fff, 0.65) !important;
+  }
+
+  textarea:-ms-input-placeholder {
+    color: rgba(#fff, 0.65) !important;
+  }
+
+  label {
+    display: block;
+  }
+
+  .wpcf7-form-control-wrap {
+    display: block;
+  }
+
+  input.form-control,
+  textarea {
+    border-color: rgba(#fff, 0.35);
+  }
+
+  @include media-breakpoint-down(sm) {
+    .wpcf7-not-valid-tip {
+      color: #000;
+      margin-top: -10px;
+      margin-bottom: 30px;
+      border-left: 4px solid red;
+      padding-left: 10px;
+      font-size: 0.9em;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .wpcf7-not-valid-tip {
+      background: rgba(#000, 0.25);
+      border-radius: 4px;
+      bottom: 90px;
+      color: #fff;
+      display: inline-block;
+      font-size: 0.7em;
+      max-width: 190px;
+      padding: 13px 11px;
+      position: absolute;
+      left: -30px;
+      z-index: 10;
+
+      &::after {
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid rgba(#000, 0.25);
+        bottom: -6px;
+        content: "";
+        margin-right: -50px;
+        position: absolute;
+        right: 100%;
+      }
+    }
+  }
+
+  .wpcf7-submit {
+    margin-top: $spacer * 1.75;
+    margin-bottom: 0;
+  }
+
+  .wpcf7-textarea {
+    width: 100%;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+}
