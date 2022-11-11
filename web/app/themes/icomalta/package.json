@@ -69,7 +69,7 @@
     "browser-sync": "~2.18",
     "browsersync-webpack-plugin": "^0.6.0",
     "bs-html-injector": "~3.0",
-    "buble-loader": "^0.4.1",
+    "buble-loader": "^0.5.1",
     "cache-loader": "~1.1.0",
     "clean-webpack-plugin": "^0.1.16",
     "copy-globs-webpack-plugin": "^0.2.0",
